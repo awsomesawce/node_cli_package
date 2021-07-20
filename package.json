@@ -1,17 +1,28 @@
 {
   "name": "node_cli_package",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Experiment in developing a cli package using nodejs.",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "listbin": "npm bin",
+    "catpackagejson": "cat ./package.json",
+    "listgbin": "npm -g bin"
   },
-  "keywords": [],
+  "keywords": [
+    "cli",
+    "experiment"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.1",
     "clear": "^0.1.0",
-    "figlet": "^1.5.0"
+    "figlet": "^1.5.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^7.31.0"
   }
 }
