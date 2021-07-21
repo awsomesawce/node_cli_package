@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# GitPod Bash init for easy terminal access
+
+export GPHOME=/workspace/node_cli_package
+
+source <(npm completion) # npm completion is easy
+
+if [ -d "$GPHOME/gp_shell/myBashCompletion.d ]; then
+    for file in $(ls "$GPHOME/gp_shell/myBashCompletion.d/*); do
+        source "$file"
+    done
+    echo "Done sourcing completion files" 2>&1
+else
+    echo "./gp_shell/myBashCompletion.d/ dir not found." >&2
+fi
