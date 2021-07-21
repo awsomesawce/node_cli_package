@@ -14,7 +14,10 @@
 ##   Handle line endings automatically for files detected as
 ##   text and leave all files detected as binary untouched.
 ##   This will handle all files NOT defined below.
-*                 text=auto
+
+# CHANGED: Changed root glob to lf, not auto.
+#          Hopefully this doesn't backfire on me...
+*                 text=lf
 
 # Source code
 *.bash            text eol=lf
@@ -36,7 +39,8 @@
 *.onlydata        text
 *.php             text diff=php
 *.pl              text
-*.ps1             text eol=crlf
+# ps1 files can be lf or crlf.  Keep it lf for consistency
+*.ps1             text eol=lf
 *.py              text diff=python
 *.rb              text diff=ruby
 *.sass            text
