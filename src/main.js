@@ -1,13 +1,49 @@
 #!/usr/bin/env node
-// Main entrypoint
-const x = 4
-function testforthree (x) {
-  if (x === 3) {
-    const x = 3
-    console.log('The value of x is equal to 3.')
-  } else {
-    console.error('The value of x is not equal to 3')
-  }
-}
 
-testforthree()
+// const commander = require('commander'); // (normal include)
+const commander = require('commander'); // include commander in git clone of commander repo
+const program = new commander.Command();
+
+// Commander supports nested subcommands.
+// .command() can add a subcommand with an action handler or an executable.
+// .addCommand() adds a prepared command with an action handler.
+
+// Example output:
+//
+// $ node nestedCommands.js brew tea
+// brew tea
+// $ node nestedCommands.js heat jug
+// heat jug
+
+// Add nested commands using `.command()`.
+const brew = program.command('brew');
+brew
+  .command('tea')
+  .action(() => {
+    console.log('brew tea');
+  });
+brew
+  .command('coffee')
+  .action(() => {
+    console.log('brew coffee');
+  });
+
+// Add nested commands using `.addCommand().
+// The command could be created separately in another module.
+function makeHeatCommand() {
+  const heat = new commander.Command('heat');
+  heat
+    .command('jug')
+    .action(() => {
+      console.log('heat jug');
+    });
+  heat
+    .command('pot')
+    .action(() => {
+      console.log('heat pot');
+    });
+  return heat;
+}
+program.addCommand(makeHeatCommand());
+
+program.parse(process.argv);
