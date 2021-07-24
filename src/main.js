@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 
-// const commander = require('commander'); // (normal include)
+const os = require('os');
+const path = require('path')
+
 const commander = require('commander'); // include commander in git clone of commander repo
+
 const program = new commander.Command();
 
 // Commander supports nested subcommands.
@@ -20,12 +23,12 @@ const brew = program.command('brew');
 brew
   .command('tea')
   .action(() => {
-    console.log('brew tea');
+    console.log('Mmm that tea is gooood');
   });
 brew
   .command('coffee')
   .action(() => {
-    console.log('brew coffee');
+    console.log('Mmm that coffee is delicious');
   });
 
 // Add nested commands using `.addCommand().

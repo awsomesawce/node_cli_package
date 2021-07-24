@@ -1,11 +1,11 @@
-#!/usr/bin/env -S zsh -f
+#!/usr/bin/zsh -f
 # Zsh setup for GitPod
 # NOTE: See ./README.gp_shell.md for info.
 
 export GPHOME=/workspace/node_cli_package
 
 # Taken from grml-zsh's PS1 value
-PS1=%B%F{red}%(?..%? )%f%b%B%F{blue}%n%f%b@%m %B%40<..<%~%<< %b%#
+PS1="%B%F{red}%(?..%? )%f%b%B%F{blue}%n%f%b@%m %B%40<..<%~%<< %b%#"
 
 source <(npm completion)
 for file in $(ls $GPHOME/gp_shell/)

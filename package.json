@@ -7,6 +7,7 @@
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "testrun": "node src/main.js",
     "listbin": "npm bin",
     "catpackagejson": "cat ./package.json",
     "listgbin": "npm -g bin"
@@ -15,7 +16,7 @@
     "cli",
     "experiment"
   ],
-  "author": "",
+  "author": "Carl C.",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.1",
