@@ -7,13 +7,13 @@ const log = console.log
 
 const commander = require('commander')
 
-const prog = new commander.Command()
+const program = new commander.Command()
 
 // Using .command()
 
-const one = prog.command('one')
-one
-  .command('another')
+const readHome = program.command('readHome')
+readHome
+  .command('dir')
   .action(() => {
     log('Well hello there')
   })
@@ -28,8 +28,8 @@ function makeTwoCommand () {
   return two
 }
 
-prog.addCommand(makeTwoCommand())
+program.addCommand(makeTwoCommand())
 
-prog.parse(process.argv)
+program.parse(process.argv)
 
 // End of file

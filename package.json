@@ -26,7 +26,8 @@
     "fs-extra": "^10.0.0",
     "got": "^9.6.0",
     "lodash": "^4.17.21",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "yargs": "^17.0.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.28.4",
