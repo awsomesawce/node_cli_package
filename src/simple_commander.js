@@ -21,13 +21,25 @@ const log = console.log
 program.command('view <dir>')
   .description(`view the directory
   The current directory used is homedir`)
-  .action((err, dir = homedir) => {
+  .action((dir, err) => {
     if (err) { console.error(`Error finding ${dir} in this filesystem.`) }
     else {
       log(`The homedir on this system is ${homedir}`)
       log(`You typed ${dir}`)
       log(fs.readdirSync(dir))
     }
+  })
+
+program.command('echo <msg>')
+  .description('Echo a message back to me')
+  .action((msg) => {
+    console.log(msg)
+  })
+ 
+program.command('debug')
+  .description('emit debug messages')
+  .action(() => {
+    console.log(`process.argv is ${process.argv}`)
   })
 
 program.parse(process.argv)
