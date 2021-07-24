@@ -17,7 +17,6 @@ const program = new commander.Command();
 // brew tea
 // $ node nestedCommands.js heat jug
 // heat jug
-
 // Add nested commands using `.command()`.
 const brew = program.command('brew');
 brew
@@ -50,3 +49,8 @@ function makeHeatCommand() {
 program.addCommand(makeHeatCommand());
 
 program.parse(process.argv);
+
+const options = program.opts();
+if (options.more) {
+  console.log('You added more tea');
+}
