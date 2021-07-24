@@ -2,11 +2,14 @@
 // Experimenting with node chalk
 // Taken from node-chalk readme: https://github.com/chalk/chalk#readme
 
+'use strict'
+
 const fs = require('fs-extra')
 const path = require('path')
 const chalk = require('chalk')
 
 const chalkUrl = 'https://github.com/chalk/chalk'
+const pkgUrlTest = "https://github.com/tj/commander.js/raw/master/package.json"
 
 const log = console.log // Easy shortcut to console.log()
 
