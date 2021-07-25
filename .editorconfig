@@ -15,6 +15,10 @@ indent_size = 2
 [*.{js,py}]
 charset = utf-8
 
+[*.{sh,bash,zsh}]
+indent_size = 4
+indent_style = space
+
 # Markdown-specific
 [*.{md,markdown,mkd}]
 charset = utf-8
@@ -42,6 +46,10 @@ indent_size = 2
 [*.{[Bb][Aa][Tt],[Cc][Mm][Dd]}]
 # DOS/Win *requires* BAT/CMD files to have CRLF newlines
 end_of_line = crlf
+
+[*.ps1]
+indent_size = 4
+indent_style = space
 
 [*.yaml]
 indent_style = space

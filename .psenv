@@ -1,0 +1,1 @@
+powershell -nop -c "Write-Output 'This file must be sourced from an open powershell session'"
