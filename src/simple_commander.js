@@ -3,18 +3,19 @@
 // TODO: Copy file to {file_name}.ts to take advantage of typescript.
 
 // Base Node API
-const fs = require('fs-extra')
-const homedir = require('os').homedir()
+const fs = require('fs-extra');
+const os = require('os');
 // eslint-disable-next-line no-unused-vars
-const path = require('path')
+const path = require('path');
 
 // NPM Packages APIs
-const commander = require('commander')
+const commander = require('commander');
 
-const program = new commander.Command()
+const program = new commander.Command();
 program.version('0.0.1')
 
-const log = console.log
+const log = console.log;
+const homedir = os.homedir();
 
 // My first command (isn't it beautiful?)
 // TODO: Add an `.option()` for viewing the dir in a different way.
