@@ -5,9 +5,11 @@ const chalk = require('chalk')
 const process = require('process')
 const os = require('os')
 const _ = require('lodash')
-const mini = require('minimatch')
+const mini = require('minimatch');
 //const esutils = require('esutils')
-const js-yaml = require('js-yaml')
+const jsyaml = require('js-yaml')
 //const optionator = require('optionator')
 const sprintf = require('sprintf-js')
-sprintf
+const console = require('console')
+const log = console.log
+log(_.add(1, 2))
