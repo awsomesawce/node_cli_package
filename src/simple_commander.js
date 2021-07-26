@@ -22,13 +22,10 @@ const homedir = os.homedir();
 program.command('view <dir>')
   .description(`view the directory
   The current directory used is homedir`)
-  .action((dir, err) => {
-    if (err) { console.error(`Error finding ${dir} in this filesystem.`) }
-    else {
-      log(`The homedir on this system is ${homedir}`)
-      log(`You typed ${dir}`)
-      log(fs.readdirSync(dir))
-    }
+  .action((dir) => {
+    log(`The homedir on this system is ${homedir}`)
+    log(`You typed ${dir}`)
+    log(fs.readdirSync(dir))
   })
 
 program.command('echo <msg>')

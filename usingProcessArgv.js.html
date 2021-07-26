@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="Generator" content="Kate, the KDE Advanced Text Editor" />
+<title>usingProcessArgv.js</title>
+</head>
+<!-- Highlighting: "JavaScript" -->
+<body>
+<pre style='color:#1f1c1b;background-color:#ffffff;'>
+<span style='color:#898887;'>#!/usr/bin/env node</span>
+<span style='color:#898887;'>// Using process.argv instead</span>
+
+<b>const</b> os <span style='color:#ca60ca;'>=</span> <span style='color:#006e28;'>require</span>(<span style='color:#bf0303;'>'os'</span>)
+<b>const</b> json5 <span style='color:#ca60ca;'>=</span> <span style='color:#006e28;'>require</span>(<span style='color:#bf0303;'>'json5'</span>)
+<b>const</b> <b><span style='color:#644a9b;'>process</span></b> <span style='color:#ca60ca;'>=</span> <span style='color:#006e28;'>require</span>(<span style='color:#bf0303;'>'process'</span>)
+<b>const</b> fs <span style='color:#ca60ca;'>=</span> <span style='color:#006e28;'>require</span>(<span style='color:#bf0303;'>'fs-extra'</span>)
+<b>const</b> path <span style='color:#ca60ca;'>=</span> <span style='color:#006e28;'>require</span>(<span style='color:#bf0303;'>'path'</span>)
+<b>const</b> _ <span style='color:#ca60ca;'>=</span> <span style='color:#006e28;'>require</span>(<span style='color:#bf0303;'>'lodash'</span>)
+
+<b>const</b> origDir <span style='color:#ca60ca;'>=</span> path<span style='color:#ca60ca;'>.</span><span style='color:#644a9b;'>normalize</span>(<span style='color:#bf0303;'>'../'</span>)
+
+nodeModules <span style='color:#ca60ca;'>=</span> fs<span style='color:#ca60ca;'>.</span><span style='color:#644a9b;'>readdirSync</span>(<span style='color:#bf0303;'>'../node_modules'</span>)
+<span style='color:#898887;'>// console.info('Here is the contents of node_modules')</span>
+<span style='color:#898887;'>// console.log(nodeModules)</span>
+<b>var</b> print <span style='color:#ca60ca;'>=</span> <b><span style='color:#644a9b;'>console</span></b><span style='color:#ca60ca;'>.</span><i><span style='color:#644a9b;'>log</span></i>
+<b>var</b> log <span style='color:#ca60ca;'>=</span> <b><span style='color:#644a9b;'>console</span></b><span style='color:#ca60ca;'>.</span><i><span style='color:#644a9b;'>log</span></i>
+<span style='color:#644a9b;'>print</span>(origDir)
+<span style='color:#644a9b;'>log</span>()
+<span style='color:#644a9b;'>log</span>(<span style='color:#bf0303;'>'Here are your script arguments'</span>)
+<span style='color:#644a9b;'>log</span>(<b><span style='color:#644a9b;'>process</span></b><span style='color:#ca60ca;'>.</span><i><span style='color:#0057ae;'>argv</span></i><span style='color:#ca60ca;'>.</span><span style='color:#644a9b;'>slice</span>(<span style='color:#b08000;'>2</span>))
+<b><i>let</i></b> coolness <span style='color:#ca60ca;'>=</span> () <b>=&gt;</b> {
+  <b><span style='color:#644a9b;'>console</span></b><span style='color:#ca60ca;'>.</span><i><span style='color:#644a9b;'>log</span></i>(<b><span style='color:#644a9b;'>__filename</span></b>)
+  <b><span style='color:#644a9b;'>console</span></b><span style='color:#ca60ca;'>.</span><i><span style='color:#644a9b;'>log</span></i>(_<span style='color:#ca60ca;'>.</span><span style='color:#644a9b;'>capitalize</span>(<span style='color:#bf0303;'>&quot;this will be capitalized&quot;</span>))
+}
+<b><i>let</i></b> coolnessTwo <span style='color:#ca60ca;'>=</span> (msg) <b>=&gt;</b> {
+  <b><span style='color:#644a9b;'>console</span></b><span style='color:#ca60ca;'>.</span><i><span style='color:#644a9b;'>log</span></i>(<span style='color:#bf0303;'>`msg is </span><span style='color:#3daee9;'>${</span>msg<span style='color:#3daee9;'>}</span><span style='color:#bf0303;'>`</span>)
+}
+
+<span style='color:#644a9b;'>coolness</span>()
+<span style='color:#644a9b;'>coolnessTwo</span>(<span style='color:#bf0303;'>&quot;Yoyoyo&quot;</span>)
+</pre>
+</body>
+</html>
