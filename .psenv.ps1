@@ -37,3 +37,7 @@ function Page-Readme {
 	}
     }
 
+$pkgjson = if (Get-ChildItem .psenv.ps1 -ErrorAction SilentlyContinue) {
+    Get-Content package.json | convertfrom-json -AsHashtable
+}
+Write-Output "Loaded psenv.ps1 file from $($MyInvocation)"
