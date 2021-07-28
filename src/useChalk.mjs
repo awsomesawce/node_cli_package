@@ -9,7 +9,8 @@ import {
   sayGreen,
   say,
   log,
-  sayRed
+  sayRed,
+  redBlue
 } from './chalkFuncs.mjs';
 
 
@@ -20,6 +21,12 @@ sayGreen(`This will be green`);
 
 sayRed(`The process args are ${process.argv}`)
 
+/**
+ * List all arguments of the process in yellow
+ * separated by newlines
+ */
 for (let a in process.argv) {
   sayYellow(`${a}`)
 }
+
+redBlue("this is red", "this is blue")

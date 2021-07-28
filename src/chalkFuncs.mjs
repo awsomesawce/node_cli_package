@@ -1,6 +1,8 @@
 #!/usr/bin/env node
-// Initiate and export chalk functions
-// Using ESM syntax
+/** @author Carl Capodice <awsomesawce at outlook dot com>
+ * @fileoverview Exports chalk terminal functions and others.
+ * Using ESM syntax
+ */
 
 import chalk from 'chalk';
 import module from 'module';
@@ -20,4 +22,8 @@ const sayRed = (msg) => {
   log(chalk.red(msg))
 }
 
-export { sayRed, log, say, sayYellow, sayGreen };
+const redBlue = (msg1, msg2) => {
+  log(`${chalk.red(msg1)} is red and ${chalk.blue(msg2)} is blue`)
+}
+
+export { sayRed, log, say, sayYellow, sayGreen, redBlue };
