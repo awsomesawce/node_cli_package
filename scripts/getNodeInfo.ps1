@@ -8,7 +8,7 @@ Get Node info in the form of a hashtable
 Returns node exe info in the form of a hashtable
 #>
 [CmdletBinding()]
-param([switch]$TBD)
+param([switch]$TBD, [switch]$GlobalScripts)
 if ($TBD) {
     Write-Error -Category 'NotEnabled' "not enabled yet"
 }
@@ -18,14 +18,11 @@ else {
             exe = (Get-Command node).Source
         }
         npm  = @{
-            exe           = (Get-Command npm -All).Source
-            globalScripts = if (Get-Command npm -ErrorAction Ignore) {
-                (ls $(npm -g bin)).FullName
-            }
-            else {
-                Write-Error "npm not found"
-            }
+            exe = (Get-Command npm -All).Source
         }
+    }
+    if ($GlobalScripts) {
+        $myNodeHash.npm.gscripts = ls $(npm -g bin)
     }
     return $myNodeHash
 }
