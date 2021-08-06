@@ -12,7 +12,7 @@ const path = require('path');
 const commander = require('commander');
 
 const program = new commander.Command();
-program.version('0.0.1')
+program.version('0.1.1')
 
 const log = console.log;
 const homedir = os.homedir();
@@ -20,12 +20,15 @@ const homedir = os.homedir();
 // My first command (isn't it beautiful?)
 // TODO: Add an `.option()` for viewing the dir in a different way.
 program.command('view <dir>')
-  .description(`view the directory
-  The current directory used is homedir`)
+  .description(`list the contents of the directory`)
   .action((dir) => {
-    log(`The homedir on this system is ${homedir}`)
-    log(`You typed ${dir}`)
-    log(fs.readdirSync(dir))
+    if (fs.pathExistsSync(dir)) {
+      log(`The homedir on this system is ${homedir}`)
+      log(`You typed ${dir}`)
+      log(fs.readdirSync(dir))
+    } else {
+      console.error("Path does not exist")
+    }
   })
 
 program.command('echo <msg>')
@@ -38,6 +41,12 @@ program.command('debug')
   .description('emit debug messages')
   .action(() => {
     console.log(`process.argv is ${process.argv}`)
+  })
+
+program.command('listPaths')
+  .description("Prints module.paths to stdout")
+  .action(() => {
+    console.log(module.paths.toLocaleString().split(','))
   })
 
 program.parse(process.argv)

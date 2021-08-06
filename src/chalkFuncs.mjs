@@ -5,7 +5,7 @@
  */
 
 import chalk from 'chalk';
-import module from 'module';
+//import module from 'module';
 //import figlet from 'figlet';
 const log = console.log
 const say = console.log
