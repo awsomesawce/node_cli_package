@@ -12,13 +12,16 @@ const path = require('path');
 const commander = require('commander');
 
 const program = new commander.Command();
-program.version('0.1.1')
+
+program.version('0.1.1') // This value should be parsed from package.json if possible.
 
 const log = console.log;
 const homedir = os.homedir();
 
-// My first command (isn't it beautiful?)
-// TODO: Add an `.option()` for viewing the dir in a different way.
+/** My first command (isn't it beautiful?)
+ *
+ * TODO: Add an `.option()` for viewing the dir in a different way.
+ */ 
 program.command('view <dir>')
   .description(`list the contents of the directory`)
   .action((dir) => {
